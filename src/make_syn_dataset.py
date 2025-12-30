@@ -20,5 +20,4 @@ def get_bsds500_datasets() -> Tuple[CustomDataset] :
 
     return CustomDataset(paths["train"]), CustomDataset(paths["val"]), CustomDataset(paths["test"])
 
-if __name__ == "__main__":
-    get_bsds500_datasets()
+
