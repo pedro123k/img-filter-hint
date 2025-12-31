@@ -11,3 +11,9 @@ __pycache__/
 
 #env files
 .env
+
+#pytorch models
+*.pth
+
+#result files
+/results
