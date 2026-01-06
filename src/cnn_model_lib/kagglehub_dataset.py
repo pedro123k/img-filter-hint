@@ -1,6 +1,6 @@
 import kagglehub
 from pathlib import Path
-from src.custom_dataset import CustomDataset
+from .custom_dataset import CustomDataset
 from typing import Tuple
 
 def get_bsds500_datasets() -> Tuple[CustomDataset] :

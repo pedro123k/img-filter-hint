@@ -1,6 +1,5 @@
-import src
-from src import cnn_model as cnn_model
-from src import make_syn_dataset as syn_dataset
+from . import cnn_model
+from . import kagglehub_dataset as syn_dataset
 from typing import Dict, Optional
 from torch.utils.data import DataLoader
 import torch
@@ -8,30 +7,38 @@ from torch import nn as nn
 import tqdm
 
 class Trainer:
-
     class EarlyStopping:
-        def __init__(self, patience=3):
-            self._total = 0
-            self._count = 0
+        def __init__(self, patience=3, mode="min"):
             self._patience = patience
+            self._count = 0
             self._best_metric = None
+            self._total_calls = 0
+            self._mode = mode
+
+        def _is_improvement(self, metric):
+            if self._best_metric is None:
+                return True
+
+            if self._mode == "min":
+                return metric < self._best_metric
+            else:
+                return metric > self._best_metric
 
         def __call__(self, metric) -> bool:
-            if self._best_metric is None or self._best_metric > metric:
-                self._count =  0
+            self._total_calls += 1
+
+            if self._is_improvement(metric):
                 self._best_metric = metric
+                self._count = 0
             else:
                 self._count += 1
-                self._total += 1
 
-            if self._count >= self._patience:
-                return True
-            else:
-                return False
-        
+            return self._count >= self._patience
+
         @property
         def total(self):
-            return self._total
+            return self._total_calls
+
 
 
     def __init__(self, device=torch.device, syn_params: Optional[Dict] = None):
