@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Review</title>
+        <script src="{{ url_for('static', path='/app.js')}}" defer></script>
+        <link rel="stylesheet" href="{{ url_for('static', path='/app.css')}}"/>
+    </head>
+    <body>
+        <main class="main-container">
+            <ul class="component-list">
+                <li class="component-list-element element-l">
+                    <svg id="icon-back" class="svg-control control-svg"
+                        viewBox="0 0 30 30"
+                        width="30" height="30"
+                        xmlns="http://www.w3.org/2000/svg"
+                        aria-label="Voltar"
+                        role="img">
+
+                    <title>Voltar</title>
+                    <rect x="6" y="13.6" width="18" height="2.8" rx="1.4"
+                            fill="black" class="hover-element hover-fill"/>
+                    <polygon points="4,15 12,8 12,22"
+                            fill="black" class="hover-element hover-fill"/>
+                    </svg>
+
+                </li>
+                <li><h1 class="container-title title">Imagem carregada</h1></li>
+                <li class="component-list-item">
+                    <figure class="img-container">
+                        <img id="img-stored" alt="Not Found!"/>
+                        <figcaption>Imagem original</figcaption>
+                    </figure>
+                </li>
+                <li class="component-list-element">
+                    <h2 class="title item-title">Filtros</h2>
+                    <form class="selection-form" id="selection-filter">
+                            <label class="selection-item" for="filter1">
+                                <span>Sem Filtro</span>
+                                <input type="radio" id="filter1" name="filter-selector" value="default" checked />
+                            </label>
+                            <label class="selection-item" for="filter2">
+                                <span>Median Filter + Bilateral Filter (Ruído)</span>
+                                <input type="radio" id="filter2" name="filter-selector" value="filter_noise"/>
+                            </label>
+                            <label class="selection-item" for="filter3">
+                                <span>Unsharp Mask (Blur)</span>
+                                <input type="radio" id="filter3" name="filter-selector" value="filter_blur"/>
+                            </label>
+                            <label class="selection-item" for="filter4">
+                                <span>Gamma Fixing + CLAHE (Luminosidade)</span>
+                                <input type="radio" id="filter4" name="filter-selector" value="filter_light"/>
+                            </label>                     
+                    </form>
+                </li>
+            </ul>
+            <ul class="component-list">
+                <li class="component-list-element element-c">
+                    <div class="h-divider"></div>
+                </li>
+            </ul>
+            <ul class="component-list">
+                <li class="component-list-element element-r">
+                    <svg id="icon-model-detail" class="svg-control" viewBox="0 0 30 30" width="30" height="30" xmlns="http://www.w3.org/2000/svg" aria-label="Detalhes do Modelo" role="img">
+                        <title>Detalhes do Modelo</title>
+
+                        <rect class="hover-element" x="2.5" y="2.5" width="25" height="25" rx="5"
+                                fill="none" stroke="black" stroke-width="1.5"/>
+
+                        <line class="hover-element hover-fill" x1="7" y1="9"  x2="23" y2="9"  stroke="black" stroke-width="2.6" stroke-linecap="round"/>
+                        <line class="hover-element hover-fill" x1="7" y1="15" x2="23" y2="15" stroke="black" stroke-width="2.6" stroke-linecap="round"/>
+                        <line class="hover-element hover-fill" x1="7" y1="21" x2="23" y2="21" stroke="black" stroke-width="2.6" stroke-linecap="round"/>
+                    </svg>
+
+                </li>
+                <li class="component-list-element">
+                    <h1 class="container-title title">Imagem processada</h1>
+                </li>
+                <li class="component-list-element">
+                    <figure class="img-container">
+                        <img id="img-filtered" src=""  alt="Not Found!">
+                        <figcaption>Imagem avaliada</figcaption>
+                    </figure>
+                </li>
+                <li class="component-list-element">
+                    <h2 class="item-title title">Score</h2>
+                    <span id="score-value">X%</span>
+                </li>
+                <li class="component-list-element">
+                    <h2 class="item-title title">Classificação</h2>
+                    <span id="classification-value">SOMETHING</span>
+                </li>
+            </ul>
+        </main>
+    </body>
+</html>

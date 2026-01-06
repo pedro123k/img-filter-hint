@@ -1,0 +1,260 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(245, 245, 245);
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    margin: 40px auto;
+    max-width: 760px;
+    background-color: white;
+    gap: 1.2rem;
+    border-radius: 12px;
+    padding: 26px;
+    justify-content: center;
+    align-items: stretch;
+    border: 1px solid rgb(220, 220, 220);
+}
+
+.main-container.h-main {
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.component-list {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    gap: 1.1rem;
+    align-items: stretch;
+    justify-items: center;
+}
+
+.component-list-element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.main-container.h-main .component-list-element {
+    align-items: stretch;
+}
+
+.title {
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.container-title {
+    font-size: 34px;
+    margin-bottom: 6px;
+}
+
+.item-title {
+    font-size: 20px;
+    margin-top: 6px;
+}
+
+.generic-text {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    color: rgb(60, 60, 60);
+}
+
+.element-c { height: 100%; }
+.element-r { align-self: flex-end; }
+.element-l { align-self: flex-start; }
+
+.h-divider {
+    width: 1px;
+    height: 100%;
+    min-height: 340px; 
+    background-color: rgb(220, 220, 220);
+    margin: 0;
+    padding: 0;
+}
+
+.img-container {
+    width: 260px;
+    height: 200px;
+    border-radius: 8px;
+    border: 1px solid rgb(220, 220, 220);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 8px;
+    background-color: white;
+}
+
+.img-container > img {
+    width: 100%;
+    height: 88%;
+    object-fit: contain; 
+    background-color: rgb(235, 235, 235);
+    border-radius: 6px;
+}
+
+.img-container figcaption {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 12px;
+    margin-top: 6px;
+    color: rgb(80, 80, 80);
+}
+
+.generic-button {
+    padding: 8px 12px;
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 8px;
+    background-color: rgb(245, 245, 245);
+}
+
+.generic-button:not(:disabled):hover  {
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.svg-control {
+    cursor: pointer;
+}
+
+.svg-control .dropzone-border {
+    fill: none;
+    stroke-width: 4;
+    stroke-dasharray: 10;
+    stroke: black;
+}
+
+.svg-control .dropzone-cross {
+    stroke-width: 4;
+    stroke: black;
+}
+
+.svg-control:hover .hover-element {
+    stroke: rgb(255, 186, 57);
+}
+
+.svg-control:hover .hover-fill {
+    fill: rgb(255, 186, 57);
+}
+
+.svg-control-is-over .hover-element {
+    stroke: rgb(255, 186, 57);
+}
+
+.svg-control-is-over .hover-fill {
+    fill: rgb(255, 186, 57);
+}
+
+.selection-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    padding: 6px;
+    gap: 6px;
+}
+
+.selection-item {
+    width: 100%;
+    padding: 8px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    font-size: 15px;
+    border-radius: 8px;
+}
+
+.selection-item:hover {
+    background-color: rgb(73, 149, 255);
+    color: white;
+}
+
+.description-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 8px;
+    align-items: stretch;
+    justify-content: flex-start;
+    gap: 0;
+    overflow: hidden;
+}
+
+.description-item {
+    padding: 10px 14px;
+    width: 100%;
+    text-align: left;
+}
+
+.description-header {
+    font-weight: bolder;
+    background-color: rgb(165, 165, 165);
+    color: white;
+    font-size: 14px;
+}
+
+dd.description-item {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.compare-table {
+    width: 100%;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 8px;
+    text-align: center;
+    border-spacing: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.compare-table td, .compare-table th {
+    padding: 8px;
+}
+
+.table-header {
+    background-color: rgb(150, 150, 150);
+    color: white;
+    border: none;
+    font-size: 12px;
+}
+
+.table-header-top {
+    width: 20%;
+    border-bottom: 1px solid rgb(210, 210, 210);
+}
+
+.table-header-left {
+    border-right: 1px solid rgb(210, 210, 210);
+}
+
+.compare-table tr:nth-child(even) {
+    background-color: rgb(248, 248, 248);
+}
+
+details {
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 8px;
+    padding: 8px;
+    background-color: white;
+}
+
+summary {
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 6px;
+}

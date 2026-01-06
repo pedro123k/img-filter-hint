@@ -1,0 +1,43 @@
+<!DOCTYPE html> 
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>Home</title>
+        <script src="{{ url_for('static', path='/app.js')}}" defer></script>
+        <link rel="stylesheet" href="{{ url_for('static', path='/app.css')}}"/>
+    </head>
+    <body>
+        <main class="main-container">
+            <section class="component-list">
+                <h1 class="title container-title component-list-element">Upload</h1>
+                <span class="component-list-element generic-text">Arraste até a área abaixo</span>
+                <div id="drop-zone" class="component-list-element">
+                    <svg id="dropzone-svg" class="svg-control" viewBox="0 0 200 200" height="200" width="200">
+                        <title>Arraste até aqui</title>
+                        <rect class="dropzone-border hover-element" x="5" y="5" height="190" width="190" rx="10" ry="10"/>
+                        <path class="dropzone-cross hover-element" d="M 100,140 V60 M60,100 H140"/> 
+                    </svg>
+                </div>
+                <span class="component-list-element generic-text">Ou</span>
+                <form class="component-list-element" id="upload-form">
+                    <label for="uploadImg" class="generic-button">
+                        Selecionar
+                    </label>
+                    <input id="uploadImg" type="file" accept="image/jpeg" hidden>
+                </form>
+            </section>
+            <section class="component-list">
+                <div class="h-divider"></div>
+            </section>
+            <section class="component-list">
+                <h1 class="title container-title component-list-element">Preview</h1>
+                <figure class="component-list-element img-container">
+                    <img id="img-preview" alt="Image not yet uploaded!"/>
+                    <figcaption>Imagem Carregada</figcaption>
+                </figure>
+                <button id="upload-btn" class="component-list-element element-r generic-button" disabled>Avançar</button>
+            </section>
+        </main>
+    </body>
+</html>
