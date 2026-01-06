@@ -60,13 +60,13 @@ python main.py
 └── .gitignore
 ```
 
-## 📸 Screenshots do Projeto
+## 📸 Imagens do Projeto
 <img src="imgs/image.png" width="600">
-<img src="imgs/image-1.png" width="200" >
-<img src="imgs/image-2.png" width="200" >
-<img src="imgs/image-3.png" width="200" >
+<img src="imgs/image-1.png" width="480" >
+<img src="imgs/image-2.png" width="480" >
+<img src="imgs/image-3.png" width="480" >
 
 ## 🚧 Status do Projeto
 
 Projeto finalizado no escopo experimental proposto.  
-Possíveis extensões futuras incluem a exploração de estratégias mais avançadas de geração de dadosnão contempladas neste trabalho.
+Possíveis extensões futuras incluem a exploração de estratégias mais avançadas de geração de dados não contempladas neste trabalho.
